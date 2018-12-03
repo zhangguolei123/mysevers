@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>万达水岸天街</title>
+    <link rel="stylesheet" href="https://cache.amap.com/lbs/static/main1119.css"/>
+    <script src="https://webapi.amap.com/maps?v=1.4.10&key=cddf244d103f582a71546998ad232711"></script>
+    <script type="text/javascript" src="https://cache.amap.com/lbs/static/addToolbar.js"></script>
+	<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+   
+   <style>
+  html, body, #container {
+            height: 100%;
+            width: 100%;
+        }
+
+
+		
+		
+		 .button-topnv{
+    position: absolute;
+    width:100px;
+	
+	top: 10px;
+	right: -20px;
+	Color:#666;
+	font-size: 12px;
+	padding: 10px;
+	display: flex;
+	flex-direction:column;
+    justify-content: center;
+    align-items: center;
+        }
+		
+.button-topnv img {
+height:50px;
+width:50px;
+}
+
+		 .button-gr{
+    position: absolute;
+    height:50px;
+	width:100%;
+	bottom: 50px;
+	right: 0px;
+
+	Color:#666;
+	font-size: 12px;
+	padding: 10px;
+	  display: flex;
+  justify-content: center;
+  align-items: center;
+        }
+.button-gr img {
+height:100px;
+width:100px;
+}
+.amap-controls{
+          bottom:-100px;
+           display: none;
+}
+
+		.amap-logo{
+    opacity:0;
+}
+   .amap-copyright {
+          bottom:-100px;
+           display: none;
+    }  
+  </style>
+</head>
+<body>
+	
+<div id="container"></div>
+
+  <div class="button-topnv">
+  <img src="https://www.cftrip.net/test/images/ypage.png"  onclick="btn1()" />
+  <img src="https://www.cftrip.net/test/images/card1.png"  onclick="btn2()" />
+  <img src="https://www.cftrip.net/test/images/mine.png"  onclick="btn3()" />
+  </div>
+
+  <div class="button-gr">
+  <img src="http://pif8cilt6.bkt.clouddn.com/mapNav.png"  onclick="btn()" />
+    
+</div>
+
+
+
+<script>
+
+//图片图层 <button id="btn1">景区简介</button>
+    var imageLayer = new AMap.ImageLayer({
+        url: 'http://p99vv3ltl.bkt.clouddn.com/gaod7.png',
+        bounds: new AMap.Bounds(
+            [118.908302,42.248059],  //zuoxia
+            [118.92167,42.257335]  //youshang
+        ),
+        zooms: [15, 18]
+    });
+	//创建地图
+    var map = new AMap.Map('container', {
+        resizeEnable: true,
+        zoom: 15,
+		viewMode: '2D',
+      rotation:250,
+	    showLabel: false ,//不显示地图文字标记
+      center: [118.9153400000,42.2523000000],
+	          layers: [
+            new AMap.TileLayer(),
+            imageLayer
+        ]
+    });
+//aaa
+
+	
+	//aaa
+	  
+
+function btn(){
+wx.miniProgram.navigateTo({url: '/pages/paintingStreet/paintingStreet'})
+}
+function btn1(){
+wx.miniProgram.navigateTo({url: '/pages/yellowPage/yellowPage'})
+}
+function btn2(){
+wx.miniProgram.navigateTo({url: '/pages/guide/guide'})
+}
+function btn3(){
+wx.miniProgram.navigateTo({url: '/pages/user/user'})
+}
+	
+
+
+      
+</script>
+</body>
+</html>
